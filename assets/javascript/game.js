@@ -1,12 +1,16 @@
 // when all has loaded, start!
 $(document).ready(function() {
 
+function startGame(){
+	total = 0;
 //declare all variables
 var targetNumber = Math.floor(Math.random () * 101) + 19;
 var counter = 0;
 var numberOptions = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
 var wins = 0;
 var losses = 0;
+var total= 0;
+
 
 // display random number to guess and wins/losses counter
 
@@ -53,9 +57,11 @@ $(".emerald").on("click", function() {
 	if (counter === targetNumber) {
 		alert ("You win!");
 		wins++;
+		startGame();
 	} else if (counter > targetNumber) {
 		alert ("You lose.");
 		losses++;
+		startGame();
 	}
 });
 
@@ -66,9 +72,11 @@ $(".rose-quartz").on("click", function(){
 	if (counter === targetNumber) {
 		alert ("You win!");
 		wins++;
+		startGame();
 	} else if (counter > targetNumber) {
 		alert ("You lose.");
 		losses++;
+		startGame();
 	}
 });
 
@@ -79,9 +87,11 @@ $(".bismuth").on("click", function(){
 	if (counter === targetNumber) {
 		alert ("You win!");
 		wins++;
+		startGame();
 	} else if (counter > targetNumber) {
 		alert ("You lose.");
 		losses++;
+		startGame();
 	}
 });
 $(".amethyst").on("click", function(){
@@ -91,13 +101,25 @@ $(".amethyst").on("click", function(){
 	if (counter === targetNumber) {
 		alert ("You win!");
 		wins++;
+		startGame();
 	} else if (counter > targetNumber) {
 		alert ("You lose.");
 		losses++;
+		startGame();
 	}
 });
 
 
+//Reset target number and randomized crystal values. 
+
+};
+function clear(){
+	total = 0;
+};
+
+startGame();
+
+clear();
 
 
 });
